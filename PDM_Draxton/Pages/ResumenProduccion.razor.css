@@ -1,0 +1,35 @@
+﻿body {
+}
+
+.claseAzul {
+    background-color: #002F5F;
+}
+
+.claseRojo {
+    background-color: #B71234;
+}
+
+.claseGris {
+    background-color: #F7F7F7;
+}
+
+.tablaCentrar {
+    text-align: center;
+    color: black;
+}
+
+.letraBlanca {
+    color: white;
+}
+
+.letraRoja {
+    color: darkred;
+}
+
+td {
+    border: white 1px solid;
+}
+
+tr {
+    border: white 1px solid;
+}

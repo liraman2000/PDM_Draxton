@@ -1,56 +1,69 @@
-﻿@*<div class="top-row ps-3 navbar navbar-dark">*@
-    <div class="container-fluid">
-        <div class="row">
-              <img src='https://www.gis.com.mx/wp-content/themes/GIS/images/gislogo1.png' size="100px"/>                     
-        <h1><a class="navbar-brand" href="">Comercio Exterior</a></h1>
+﻿@inject IJSRuntime JSRuntime
 
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>   </div>  
-@*</div>*@
-@*<RadzenHeader>
-      <ChildContent>
-        <div class="row justify-content-start align-items-center">
-          <div class="col-6 d-flex align-items-center">
-            <RadzenSidebarToggle Click="@SidebarToggle0Click">
-            </RadzenSidebarToggle>
-            <RadzenLabel Text="Blazor">
-            </RadzenLabel>
-          </div>
-          <div class="col-6 text-right">
-          </div>
+<div class="iconoGrande">
+    <div class="top-row navbar " style="background-color:#f7f7f7; background-image:url('/css/Images/logo GIS gris CH.png'); background-repeat: no-repeat">
+    </div>
+</div>
+
+<div class="iconoPequeno">
+    <div class="top-row navbar " style="background-color:#f7f7f7; background-image:url('/css/Images/emblema-GIS-CH.png'); background-repeat: no-repeat">
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" Match="NavLinkMatch.All">
+                <button @onclick="menu" class="link-info botonCerrar">
+                    <img src="/images/menu-64.jpg" width="32" height="32" />
+                </button>
+            </NavLink>
         </div>
-      </ChildContent>
- </RadzenHeader>*@
 
-@*<AuthorizeView>
-    <Authorized>*@
 
-@using PDM_Draxton.Services
-@inject IdentityInformation _identity;
-@*
-@if (_identity.IsAuthenticated)
-{*@
+        <div class="menuOpciones">
 
-    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-        <nav class="flex-column">
-                   <div class="nav-item px-3">
-                <NavLink class="nav-link" href="login">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> Login
-                </NavLink>
-            </div>
-          
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="usuarios">
-                        <span class="oi oi-list-rich" aria-hidden="true"></span> Usuarios
+                    <NavLink class="nav-link" href="AnalisisQuimico" Match="NavLinkMatch.All">
+                        <span class="oi oi-magnifying-glass" aria-hidden="true"></span> Análisis Químico
                     </NavLink>
                 </div>
-            
-        </nav>
-    </div>
-@*}*@
 
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="AnalisisMetalografico">
+                            <span class="oi oi-magnifying-glass" aria-hidden="true"></span>  Análisis Metalográfico
+                        </NavLink>
+                    </div>
+
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="Dureza">
+                            <span class="oi oi-magnifying-glass" aria-hidden="true"></span> Dureza
+                        </NavLink>
+                    </div>
+
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="ResumenProduccion">
+                            <span class="oi oi-magnifying-glass" aria-hidden="true"></span> ResumenProduccion
+
+                        </NavLink>
+                    </div>
+
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="CertificadosCalidad">
+                            <span class="oi oi-cog" aria-hidden="true"></span> Certificado de Calidad
+                        </NavLink>
+                    </div>
+
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="Contactos">
+                            <span class="oi oi-cog" aria-hidden="true"></span> Contactos
+                        </NavLink>
+                    </div>
+
+        </div>
+
+    </nav>
+</div>
 
 @code {
     private bool collapseNavMenu = true;
@@ -61,4 +74,15 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    IJSObjectReference JSObjectReference { get; set; }
+
+    async Task menu()
+    {
+        //await JSRuntime.InvokeVoidAsync("alert","hola");
+        JSObjectReference = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./Shared/NavMenu.razor.js");
+        await JSObjectReference.InvokeVoidAsync("menu");
+
+    }
+
 }

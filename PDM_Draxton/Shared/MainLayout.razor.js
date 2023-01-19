@@ -1,0 +1,2 @@
+﻿
+$('.iconoPequeno').hide()

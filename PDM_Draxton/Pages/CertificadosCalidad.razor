@@ -1,0 +1,52 @@
+﻿@page "/CertificadosCalidad"
+@using Models
+
+<h3></h3>
+
+
+<div class="row">
+    <RadzenFieldset Text="Certificados de Calidad">
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-7">
+                <div class="row row-cols-auto justify-content-end">
+                    <div>
+                        <RadzenButton Text="Conf. Email" Style="white-space: nowrap;"></RadzenButton>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Contactos" Style="white-space: nowrap;"></RadzenButton>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Nuevo Certificado" Style="white-space: nowrap;"></RadzenButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </RadzenFieldset>
+</div>
+
+<div class="row">
+    <RadzenDataGrid AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" PageSize="10" AllowSorting="true" Data="@ejem" TItem="Ejemplo">
+
+        <Columns>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Visible="false" Property="idEjemplo" Title="Pedimento" Width="0px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Nombre" Title="Pedimento" Width="115px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Descripcion" Title="Numero Factura" Width="200px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Total" Title="Fecha Facturacion" Width="100px">
+            </RadzenDataGridColumn>
+
+        </Columns>
+    </RadzenDataGrid>
+</div>
+
+@code {
+
+    private IEnumerable<Ejemplo> ejem;
+
+}

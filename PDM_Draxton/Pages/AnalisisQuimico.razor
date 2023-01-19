@@ -1,0 +1,322 @@
+﻿<!-- Primera linea Draxto_PDM.drawio.html -->
+@page "/AnalisisQuimico"
+@using Models
+
+<h3></h3>
+
+<RadzenFieldset Text="Certificados de Calidad - Analisis Químico" class="mb-3">
+    <div class="row mb-3">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-7">
+                <div class="row row-cols-auto justify-content-end">
+                    <div>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Guardar Registro" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Cancelar Registro" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Cliente / Customer</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">No Certificado / Certificate</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Cliente para impresión / Customer to print</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Fecha de Producción / Production Date</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Pieza / Part Name</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col">
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Lote / Lote</RadzenText>
+                    <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                    Data=@ejem />
+                </div>
+                <div class="col">
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Lote Cliente / Cust Lot</RadzenText>
+                    <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                    Data=@ejem />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Tipo de Hierro / Iron Type</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Linea / Line</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row  mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Norma / Specification</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Cantidad Producida / Quantity Produced</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Fecha y Nivel de Ingeniaeria / Engineering Level</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
+</RadzenFieldset>
+
+<div class="row mb-3">
+    <table class="tablaCentrar">
+        <tr>
+            <th class="claseAzul" colspan="4">
+                <RadzenLabel Text="RESUMEN DE PRODUCCIÓN / PRODUCCTION SUMMARY" class="row m-1 justify-content-center" Style="color: white;" />
+            </th>
+        </tr>
+        <tr>
+            <td class="claseRojo" Style="color: white;">
+                Fecha Inicial
+            </td>
+            <td class="claseRojo" Style="color: white;">
+                Fecha Final
+            </td>
+            <td class="claseRojo" Style="color: white;">
+                Moldes Producidos
+            </td>
+            <td class="claseRojo" Style="color: white;">
+                Piezas Producidas
+            </td>
+        </tr>
+        <tr>
+            <td Style="color: black;">
+                0
+            </td>
+            <td Style="color: black;">
+                0
+            </td>
+            <td Style="color: black;">
+                0
+            </td>
+            <td Style="color: black;">
+                0
+            </td>
+        </tr>
+    </table>
+
+    <div class="row">
+        <table class="">
+            <tr>
+                <th class="claseAzul tablaCentrar" colspan="18">
+                    <RadzenLabel Text="ANÁLISIS QUÍMICO / CHEMISTRY" class="row m-1 justify-content-center" Style="color: white;" />
+                </th>
+            </tr>
+            <tr>
+                <th class="claseRojo tablaCentrar m-2" colspan="3" Style="color: white;">Característica / Caracteristic</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% C</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Si</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Mn</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% P</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% S</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Sn</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Mg</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Cu</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Cr</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Ni</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Mo</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Ti</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% V</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Zr</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% C_Eq</th>
+
+            </tr>
+            <tr>
+                <td class="claseAzul" colspan="2" rowspan="2" Style="text-align: center; color: white;">ESPECIFICACIÓN / ESPECIFICATION</td>
+                <td class="tablaCentrar" Style="font-weight: bold;">MIN</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+
+            </tr>
+            <tr>
+                <td class="tablaCentrar" Style="font-weight: bold;">MAN</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+            </tr>
+
+            <tr>
+                <th class="claseRojo tablaCentrar" Style="color: white;">RESULT</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">FECHA</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">ID</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% C</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Si</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Mn</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% P</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% S</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Sn</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Mg</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Cu</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Cr</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Ni</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Mo</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Ti</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% V</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% Zr</th>
+                <th class="claseRojo tablaCentrar" Style="color: white;">% C_Eq</th>
+
+            </tr>
+            <tr>
+                <td class=""></td>
+                <td class=""></td>
+                <td class="tablaCentrar"></td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+                <td class="tablaCentrar">0.000</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+@code {
+
+    private IEnumerable<Ejemplo> ejem;
+
+}

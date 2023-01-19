@@ -1,0 +1,254 @@
+﻿<!-- Segunda linea Draxto_PDM.drawio.html -->
+@page "/AnalisisMetalografico"
+@using Models
+
+<h3></h3>
+
+<RadzenFieldset Text="Certificados de Calidad - Nuevo Certificado" class="mb-3">
+    <div class="row mb-3">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-7">
+                <div class="row row-cols-auto justify-content-end">
+                    <div>
+                        <RadzenButton Text="Guardar Cambios" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Cancelar Cambios" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Editar Certificado" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Salir" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Cliente / Customer</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">No Certificado / Certificate</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Cliente para impresión / Customer to print</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Fecha de Producción / Production Date</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Pieza / Part Name</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col">
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Lote / Lote</RadzenText>
+                    <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                    Data=@ejem />
+                </div>
+                <div class="col">
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Lote Cliente / Cust Lot</RadzenText>
+                    <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                    Data=@ejem />
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Tipo de Hierro / Iron Type</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Linea / Line</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row  mb-2">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Norma / Specification</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Cantidad Producida / Quantity Produced</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Fecha y Nivel de Ingeniaeria / Engineering Level</RadzenText>
+                <RadzenDropDown AllowClear="true" TValue="string" Class="w-100"
+                                Data=@ejem />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-4">
+            <div class="row">
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
+</RadzenFieldset>
+
+<div class="row mb-3">
+    <table class="tablaCentrar">
+        <tr>
+            <th class="claseAzul" colspan="4">
+                <RadzenLabel Text="RESUMEN DE PRODUCCIÓN / PRODUCCTION SUMMARY" class="row m-1 justify-content-center" Style="color: white;" />
+            </th>
+        </tr>
+        <tr>
+            <td class="claseRojo letraBlanca">
+                Fecha Inicial
+            </td>
+            <td class="claseRojo letraBlanca">
+                Fecha Final
+            </td>
+            <td class="claseRojo letraBlanca">
+                Moldes Producidos
+            </td>
+            <td class="claseRojo letraBlanca">
+                Piezas Producidas
+            </td>
+        </tr>
+        <tr>
+            <td Style="color: black;">
+                0
+            </td>
+            <td Style="color: black;">
+                0
+            </td>
+            <td Style="color: black;">
+                0
+            </td>
+            <td Style="color: black;">
+                0
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+
+<div class="row">
+    <table class="">
+        <tr>
+            <th class="claseAzul tablaCentrar" colspan="6">
+                <RadzenLabel Text="ANÁLISIS METALOGRÁFICO / METALLOGRAFHY" class="row m-1 justify-content-center" Style="color: white;" />
+            </th>
+        </tr>
+        <tr>
+            <th class="claseRojo tablaCentrar letraBlanca" rowspan="2">CARACTERÍSTICA / CHARACTERISTIC</th>
+            <th class="claseRojo tablaCentrar letraBlanca" rowspan="2">% NODULARIDAD / % NODULARITY RATING</th>
+            <th class="claseRojo tablaCentrar letraBlanca" rowspan="2">% NODULOS - MM2 NODULE COUNT / MM2</th>
+            <th class="claseAzul tablaCentrar letraBlanca" colspan="3">DISTRIBUCIÓN DE MATRIZ / MATRIS RATING</th>
+        </tr>
+        <tr>
+            <td class="tablaCentrar claseRojo letraBlanca">% Perlita &&aafs; %Perlite</td>
+            <td class="tablaCentrar claseRojo letraBlanca">% Ferrita / % Ferrite</td>
+            <td class="tablaCentrar claseRojo letraBlanca">% Carburos / % Carbides</td>
+        </tr>
+        <tr>
+            <td class="claseAzul tablaCentrar" Style="color: white;" rowspan="2">ESPECIFICACIÓN - SPESIFICATION / RESULTADO / RESULT</td>
+            <td class="tablaCentrar claseGris">80 MN</td>
+            <td class="tablaCentrar claseGris">200 MN</td>
+            <td class="tablaCentrar claseGris">25</td>
+            <td class="tablaCentrar claseGris">75</td>
+        </tr>
+        <tr>
+            <td class="tablaCentrar">0</td>
+            <td class="tablaCentrar"></td>
+            <td class="tablaCentrar"></td>
+            <td class="tablaCentrar"></td>
+            <td class="tablaCentrar"></td>
+            <td class="tablaCentrar"></td>
+        </tr>
+
+    </table>
+</div>
+
+
+@code {
+
+    private IEnumerable<Ejemplo> ejem;
+
+}

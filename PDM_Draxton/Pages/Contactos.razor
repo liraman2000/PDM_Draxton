@@ -1,0 +1,61 @@
+﻿@page "/Contactos"
+@using Models
+
+<h3></h3>
+
+<RadzenFieldset Text="Certificados de Calidad - Contactos" class="mb-3">
+    <div class="row mb-3">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-7">
+                <div class="row row-cols-auto justify-content-end">
+                    <div>
+                        <RadzenButton Text="Xls" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Guardar Registro" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                    <div>
+                        <RadzenButton Text="Cancelar Registro" Style="white-space: nowrap; background-color: #002F5F;"></RadzenButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</RadzenFieldset>
+
+
+<div class="row">
+    <RadzenDataGrid AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" PageSize="10" AllowSorting="true" Data="@ejem" TItem="Ejemplo">
+
+        <Columns>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Visible="false" Property="idEjemplo" Title="Id cliente" Width="0px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Nombre" Title="Nombre del cliente" Width="115px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Descripcion" Title="Telefono 1" Width="200px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Total" Title="Telefono 2" Width="100px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Descripcion" Title="Email 1" Width="200px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Total" Title="Email 2" Width="100px">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Models.Ejemplo" Property="Total" Title="Acción" Width="100px">
+            </RadzenDataGridColumn>
+
+        </Columns>
+    </RadzenDataGrid>
+</div>
+
+
+
+@code {
+
+    private IEnumerable<Ejemplo> ejem;
+
+}
+
