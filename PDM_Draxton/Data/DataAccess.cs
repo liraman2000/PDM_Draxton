@@ -20,7 +20,9 @@ namespace PDM_Draxton.Data
         private static dll_Gis.Funciones fn = new dll_Gis.Funciones();
         private static SqlConnection m_objSqlConnection; 
         
-        static IConfigurationBuilder configBuilder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
+        static IConfigurationBuilder configBuilder = new ConfigurationBuilder()
+            
+            .AddJsonFile("appsettings.json");
         IConfiguration configuration = configBuilder.Build();
 
         public DataAccess()
