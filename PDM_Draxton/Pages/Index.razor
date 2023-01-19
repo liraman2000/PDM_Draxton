@@ -1,0 +1,72 @@
+﻿
+@using PDM_Draxton.Services;
+@inject IdentityInformation _identity;
+@layout MainLayout
+
+@*@using PDM_Draxton.Models
+@using PDM_Draxton.Data*@
+
+@*@inject AuthenticationStateProvider AuthenticationStateProvider*@
+
+<PageTitle>Inicio</PageTitle>
+
+    <br />
+    <br />
+    <p>Usuario Verificado: @_identity.IsAuthenticated</p>
+    <p>Bienvenido, @(_identity.Name ?? "")</p>
+    <p>Email: @(_identity.Email ?? "correo no disponible")</p>
+
+<p>@authMessage</p>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+    //    base.OnInitialized();
+  
+
+    }
+
+    string authMessage = String.Empty;
+  //  string ?correo;
+
+
+    //[CascadingParameter] Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnParametersSetAsync() {
+
+        try
+        {
+        //var authenticationState = await authenticationStateTask;
+        //var NombreUsuario = authenticationState.User.Claims.First(c => c.Type == "name");
+        //var user = authenticationState.User;
+        //var correo = user.Identity.Name; 
+
+  //      DataAccess da = new DataAccess();
+     //   Usuario usuario = new Usuario();
+
+            if (!_identity.IsAuthenticated)//(user.Identity.IsAuthenticated)
+          //  {
+           //     authMessage = $"{user.Identity.Name} is authenticated.";
+            //    correo = _identity.Email;//user.Identity.Name;
+            
+            //    if (!da.cons_UsuarioAcceso(correo, out Usuario usuario, out String msgErrorInc))
+            //      {  authMessage = "El usuario no es esta Autorizado para esta aplicación";
+
+            //        _identity.IsAuthenticated = false;
+            //      }
+
+            //}
+            //else
+            //{
+                authMessage = "El usuario no es esta Autorizado para esta aplicación";
+            //}
+        }
+        catch
+        {
+            authMessage = "El usuario no es esta Autorizado para esta aplicación";
+
+        }     
+    }
+   
+}

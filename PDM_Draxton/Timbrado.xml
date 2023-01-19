@@ -1,0 +1,129 @@
+<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd"
+  Version="3.3"
+  Serie="FAC"
+  Folio="14135"
+  Fecha="2022-12-01T15:42:26"
+  Sello="QIlYjSxC2G9f7fsS/zEzjOssJTOKwVXbCYxlv1A1OqxiiZK6tQnGrW73rITNkcyD0jBdL0LhdCoBLzGA71DZ+Hv7HDaKiaBqRlHH6BdCbOHAedZrV6zG2lthFdX9iwpnMefF2+l+z/Vg910U/qtozG1jgYLX9mqKoKrtY+Airfg8KATVt/DDDU85il3jahO70q6I9GywF3mH+PkrvEc1F56XAioyKrta4YkCRtFzYQgonEI8fORSfEcReBF9whQCm6O2dr1rvIlEcQrxWr0ikFwWsXzQDYQpyrPnnh1d0aSIEBFqTqvyvKUXIvS07FtjHebNCOKmq9aaCYT+K5PHHg=="
+  FormaPago="99"
+  NoCertificado="30001000000400002447"
+  Certificado="MIIF7zCCA9egAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0NDcwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjE3MjA1MDU1WhcNMjMwNjE3MjA1MDU1WjCCARUxNDAyBgNVBAMTK0lORElTVFJJQSBJTFVNSU5BRE9SQSBERSBBTE1BQ0VORVMgU0EgREUgQ1YxNDAyBgNVBCkTK0lORElTVFJJQSBJTFVNSU5BRE9SQSBERSBBTE1BQ0VORVMgU0EgREUgQ1YxNDAyBgNVBAoTK0lORElTVFJJQSBJTFVNSU5BRE9SQSBERSBBTE1BQ0VORVMgU0EgREUgQ1YxJTAjBgNVBC0THElJQTA0MDgwNURaNCAvIEtBSE82NDExMDFCMzkxHjAcBgNVBAUTFSAvIEtBSE82NDExMDFITlRMS1MwNjEqMCgGA1UECxMhSUxVTklNQURPUkEgREUgQUxNQUNFTkVTIFNBIERFIENWMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhphiyS0yXFkRjef5ph34OekrmQ6v9HN8Je53Hb1ntTjiSfyYehbPjUbXGImvO9acFaDOYG07bkbSfFqVre6q5C6CzXI85R3SU8mh1Yt/vhECCuJyayBYs+RRghhSS01DfOcsgIurvS9I8focsSCkWjkw4SmIbVReGRTYzvsjmCrzLJFOAebr3arExvSXQ45EqL2kgdDhUS4duofNMCJy6SJyA6l+s5FdImRbxrRzZXsXd483ckiMPqNlJ+j4JGVCGPZYPcEMQzq2I+x5XNdWNO+jLgLCeMmFmuszDSxu2LUXRntKJYtWUnGDjLc+KImIhyTUoMSFTPrjCAVYT5o21QIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAgEArxekuVwawqjYDuaYfO/Tmre985sgjIoRaEhfHIUCU2Zo2jy7TXO3yTo3b4urW0s11SQfBgpwT5xu5gzsOr3scSNiVyuc1O3zLB05JbmEeBtwNPtIz7VyKVInTfn2MEGlS/olS1E8Q6NoyoE3yFcX2AZYRwOWnwpRXtJNyggCa+9y62IRGULfCqwnKt/YKCHioObbDtCFzPjik4E0jXB7GMl9WQFcTtpU1fM17zLGjQJh3cWqNyH/41UZjRFRBvBQOsyfl46doMOPZF1kOH16D/oTH4N9SaPNWL28XpeZhNOMy5TwM6jRyOWfXlhgFqoud1LYgh9RuoHaLg4pgZWs2DdqIGRPjKb/gNTDjkO+dMHltw4GBsEvR9bFQ/DkLk5+4lb0v9uBQ0vox83N7ovr5W6d/IvT5zW4fTxvykv7taYct43soCzUcX9+WKHChi8uIluEXn5uY5qI94FvD2myam9aUSQdZX9LrdWAE1tEoV17rFc1neN0vEqlVmax04wIcRh4Sfc1ZvbU/dMJfLC0EYVF0XgImg9wWg/8kohyCbSQx7TOO90UW86QYmCxE5EmmfpRD3xqY9Wk+pOHHJEWSJ17jvz2u/Kqv3UkZUSR0Q47cQGUR+NRURVjzS3S41iAZuAZJwh8gtrGvyE0fVyf7Rbd4txXqYVVGWBLPl1ai2M="
+  CondicionesDePago="30 DIAS"
+  SubTotal="4944.60"
+  Moneda="USD"
+  TipoCambio="19.4333"
+  Total="4944.60"
+  TipoDeComprobante="I"
+  MetodoPago="PPD"
+  LugarExpedicion="78395" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital">
+  <cfdi:Emisor
+    Rfc="IIA040805DZ4"
+    Nombre="GISEDERLAN, S.A. DE C.V."
+    RegimenFiscal="601" />
+  <cfdi:Receptor
+    Rfc="EKU9003173C9"
+    Nombre="SEOHAN AUTO MEXICO S DE RL DE CV"
+    UsoCFDI="G01" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto
+      ClaveProdServ="31121226"
+      NoIdentificacion="51716-R1000"
+      Cantidad="90"
+      ClaveUnidad="H87"
+      Unidad="PZ"
+      Descripcion="PORTAMANGUETAS RH BR2"
+      ValorUnitario="13.07"
+      Importe="1176.30">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado
+            Base="1176.30"
+            Impuesto="002"
+            TipoFactor="Tasa"
+            TasaOCuota="0.000000"
+            Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto
+      ClaveProdServ="31121226"
+      NoIdentificacion="51715-R1000"
+      Cantidad="90"
+      ClaveUnidad="H87"
+      Unidad="PZ"
+      Descripcion="PORTAMANGUETAS LH BR2"
+      ValorUnitario="13.07"
+      Importe="1176.30">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado
+            Base="1176.30"
+            Impuesto="002"
+            TipoFactor="Tasa"
+            TasaOCuota="0.000000"
+            Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto
+      ClaveProdServ="31121226"
+      NoIdentificacion="51715-BX000"
+      Cantidad="90"
+      ClaveUnidad="H87"
+      Unidad="PZ"
+      Descripcion="Portamanguetas LH SU2B"
+      ValorUnitario="14.40"
+      Importe="1296.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado
+            Base="1296.00"
+            Impuesto="002"
+            TipoFactor="Tasa"
+            TasaOCuota="0.000000"
+            Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto
+      ClaveProdServ="31121226"
+      NoIdentificacion="51716-BX000"
+      Cantidad="90"
+      ClaveUnidad="H87"
+      Unidad="PZ"
+      Descripcion="Portamanguetas RH SU2B"
+      ValorUnitario="14.40"
+      Importe="1296.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado
+            Base="1296.00"
+            Impuesto="002"
+            TipoFactor="Tasa"
+            TasaOCuota="0.000000"
+            Importe="0.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos
+    TotalImpuestosTrasladados="0.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado
+        Impuesto="002"
+        TipoFactor="Tasa"
+        TasaOCuota="0.000000"
+        Importe="0.00" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital
+      FechaTimbrado="2022-12-02T14:43:43"
+      RfcProvCertif="SPR190613I52"
+      UUID="ffe71e5c-3c23-43ee-b0ae-e60ef51496c3"
+      NoCertificadoSAT="30001000000400002495"
+      SelloCFD="QIlYjSxC2G9f7fsS/zEzjOssJTOKwVXbCYxlv1A1OqxiiZK6tQnGrW73rITNkcyD0jBdL0LhdCoBLzGA71DZ+Hv7HDaKiaBqRlHH6BdCbOHAedZrV6zG2lthFdX9iwpnMefF2+l+z/Vg910U/qtozG1jgYLX9mqKoKrtY+Airfg8KATVt/DDDU85il3jahO70q6I9GywF3mH+PkrvEc1F56XAioyKrta4YkCRtFzYQgonEI8fORSfEcReBF9whQCm6O2dr1rvIlEcQrxWr0ikFwWsXzQDYQpyrPnnh1d0aSIEBFqTqvyvKUXIvS07FtjHebNCOKmq9aaCYT+K5PHHg=="
+      SelloSAT="rtkBN7RiQWTZv2jc50uOkiLWY8DgPIxCY6QzvYjygh2GVEoBuDwKxlzaOUdI7dNe7xmojqRZPluTrXiejR+hh1ObHUZKbC3h4WddqCWH9+7wyTuEvQ8I878AhG7wkSWrf52yynN1w+qHbcgTl6WIrl4Wh32bY2+oWqlmFK9DB+GmKiJG1HX0BWNV/OZW03ogRWzCGTApmyGZpqeGrl7EHttu5fRD/GWc7S5uCtLBSJxooD6XyObGja1NuJSv3A/IY73NJJT8wRE07/lh18N320dmKLUBwlRXRTbWxLhSFNDGBr4g2jlsddoStbnmnjA808HadAHrAOsB1i+ywwGicg=="
+      Version="1.1"></tfd:TimbreFiscalDigital>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

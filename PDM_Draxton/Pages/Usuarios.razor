@@ -1,0 +1,119 @@
+﻿
+@page "/usuarios"
+
+@layout MainLayout
+@inherits PDM_Draxton.Pages.UsuariosComponent
+
+@using PDM_Draxton.Data
+@using PDM_Draxton.Models
+
+@using Radzen
+@using Radzen.Blazor
+@using Blazor.Models.Sample
+@*@using Blazor.Models.ConnectionString*@
+
+@using PDM_Draxton.Services
+@inject IdentityInformation _identity;
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Order> L
+<PageTitle>Usuarios</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Usuarios">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text= "Agregar" Click="@Button0Click">
+        </RadzenButton>
+        @*@ref="grid0" *@
+        <RadzenDataGrid @ref="grid0" AllowFiltering="true" FilterMode="Radzen.FilterMode.Advanced" AllowPaging="true" AllowSorting="true" 
+        Data="@usuario" RowDoubleClick="@Grid0RowDoubleClick"
+        TItem="Usuario"  RowSelect="@Grid0RowSelect">
+        @*RowDoubleClick="@Grid0RowDoubleClick" Render="@Grid0Render" LoadData="@Grid0LoadData"  *@ 
+        @*Count="@getOrdersCount" *@
+@*        <RadzenDataGrid AllowPaging="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+              PageSize="10" AllowSorting="true" ColumnWidth="150px" Data="@pedimento" FilterMode="Radzen.FilterMode.Advanced" TItem="cDataStage"
+              RowSelect="@Grid0RowSelect">*@
+
+          <Columns>
+            <RadzenDataGridColumn TItem="Usuario" Property="Id" Visible="false" Title="Id">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Usuario" Property="Nombre" Title="Nombre">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Usuario" Property="Correo" Title="Correo">
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="Usuario" Property="Negocio" Title="Negocio">
+            </RadzenDataGridColumn>
+             <RadzenDataGridColumn TItem="Usuario" Property="Rol" Title="Perfil">
+            </RadzenDataGridColumn>
+@*            <RadzenDataGridColumn TItem="Usuario" Property="OrderDate" FormatString="{0:d}" Title="Order Date">
+            </RadzenDataGridColumn>*@
+            <RadzenDataGridColumn TItem="Usuario" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+              @*<Template Context="blazorModelsSampleOrder">*@
+                  <Template>
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args))" @onclick:stopPropagation="true">
+                </RadzenButton></Template>
+              @*</Template>*@
+            </RadzenDataGridColumn>
+          </Columns>
+        </RadzenDataGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>
+
+@code{
+
+    //int IdUsuario; 
+
+    //private IEnumerable<Usuario> usuario;
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    DataAccess da = new DataAccess();
+
+    //    IdUsuario = _identity.IdUsuario;
+
+    //    if (da.cons_Usuario(out List<Usuario> lista, out String msgError))
+    //    {
+    //        usuario = lista;
+    //    }
+
+    //}
+
+
+
+    //public async void cons_Pedimento()
+    //{
+    //    DataAccess da = new DataAccess();
+
+    //    if (checkBoxValue)
+    //    {           
+    //        if (da.cons_Pedimento(IdUsuario, 1 , out List<cDataStage> lista, out String msgError))
+    //        {
+    //            pedimento = lista;
+    //        }
+    //    }
+    //    else
+    //       if (da.cons_Pedimento(IdUsuario, 0 , out List<cDataStage> lista,out String msgError))
+    //    {
+    //        pedimento = lista;
+    //    }
+
+    //}
+
+    //public async void Guardar()
+    //{
+    //    DataAccess da = new DataAccess();
+
+    //    da.GeneraPeriodos(_identity.IdUsuario, out String msgError);
+    //    da.GeneraPeriodoNegocio(_identity.IdUsuario,out msgError);
+    //    da.GeneraIncidencias(_identity.IdUsuario, out msgError);
+
+    //    modal.Show<Correo2>();
+    //    //UriHelper.NavigateTo("correo-2");
+    //    OnInitializedAsync();
+
+    //}
+
+}

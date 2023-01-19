@@ -1,0 +1,89 @@
+﻿@page "/edit-order/{Id}"
+@layout MainLayout
+@inherits PDM_Draxton.Pages.EditUserComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using PDM_Draxton.Services
+@using PDM_Draxton.Data
+@using PDM_Draxton.Models
+
+@inject IdentityInformation _identity;
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<EditUser> L
+<PageTitle>Editar Usuario</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm TItem="PDM_Draxton.Models.Usuario" Data="@usuario" Visible="@(usuario != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Perfil" Component="Rol" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+  @*              <RadzenTextBox style="width: 100%" @bind-Value="@(usuario.Negocio)" Name="Negocio">
+                </RadzenTextBox>*@
+               <RadzenDropDown Data="@IRol" AllowClear="true" AllowFiltering="true" style="height: 31px" TextProperty="Descripcion" 
+               ValueProperty="Id" Name="Rol" TValue="int" @bind-Value=IdRol Change=@(perfil)  Placeholder="Seleccione...">
+                </RadzenDropDown>
+@*                <RadzenRequiredValidator Component="Rol" Text="Rol es requerido" style="position: absolute">
+                </RadzenRequiredValidator>*@
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Nombre" Component="Nombre" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox style="width: 100%" @bind-Value="@(usuario.Nombre)" Name="Nombre">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Correo" Component="Correo" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox style="width: 100%" Disabled="true" @bind-Value="@(usuario.Correo)" Name="Negocio">
+                </RadzenTextBox>
+@*                <RadzenRequiredValidator Component="Correo" Text="Correo es requerido" style="position: absolute">
+                </RadzenRequiredValidator>*@
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Negocio" Component="Negocio" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+  @*              <RadzenTextBox style="width: 100%" @bind-Value="@(usuario.Negocio)" Name="Negocio">
+                </RadzenTextBox>*@
+               <RadzenDropDown Data="@INegocio" Disabled=@deshabilita AllowClear="true" AllowFiltering="true" style="height: 31px" 
+               TextProperty="Descripcion" ValueProperty="Id" Name="Negocio" Change=@(negocio) TValue="string" @bind-Value=IdNegocio Placeholder="Seleccione...">
+                </RadzenDropDown>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Grabar" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>
+@code{
+
+
+}

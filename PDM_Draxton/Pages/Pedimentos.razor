@@ -1,0 +1,241 @@
+﻿@page "/pedimentos"
+@layout MainLayout
+@inherits PDM_Draxton.Pages.PedimentosComponent
+
+@using PDM_Draxton.Data
+@using PDM_Draxton.Models
+@using Radzen
+@using Radzen.Blazor
+
+@using PDM_Draxton.Services
+@inject IdentityInformation _identity
+@inject IModalService modal  
+@inject DialogService DialogService
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Pedimentos> L
+@if (_identity.IsAuthenticated)
+{
+    var identity = _identity.IdNegocio;
+    <PageTitle>Pedimentos</PageTitle>
+    <RadzenContent Container="main">
+        <ChildContent>
+            <RadzenHeading Size="H1" Text="Pedimentos">
+            </RadzenHeading>
+            <div style="height: 100%" class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 justify-content-end d-flex">
+                            <RadzenLabel Component="checkbox0" style="margin-bottom: 05px; margin-left: 05px; margin-right: 05px; margin-top: 05px" Text="Mostrar solo errores">
+                            </RadzenLabel>
+                            <RadzenCheckBox @bind-Value=@checkBoxValue Change=@(cons_Pedimento) style="margin-bottom: 5px; margin-left: 5px; margin-right: 5px" TriState="false" Name="Checkbox0" TValue="bool">
+                            </RadzenCheckBox>
+
+                        </div>
+                    </div>
+                    <RadzenCard style="height: 100%">
+                        <ChildContent>
+                            <RadzenDataGrid AllowPaging="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+                                  PageSize="10" AllowSorting="true" ColumnWidth="150px" Data="@pedimento" FilterMode="Radzen.FilterMode.Advanced" TItem="cDataStage"
+                                  RowSelect="@Grid0RowSelect">
+
+                                <Columns>
+                                    <RadzenDataGridColumn TItem="cDataStage" Property="id" Title="Pedimento" Visible="false">
+                                    </RadzenDataGridColumn>
+                                    <RadzenDataGridColumn TItem="cDataStage" Property="Pedimento" Title="Pedimento"  Width="20%">
+                                    </RadzenDataGridColumn>
+                                    <RadzenDataGridColumn TItem="cDataStage" Property="ProveedorMercancia" Title="Emisor" Width="40%">
+                                    </RadzenDataGridColumn>
+                                    <RadzenDataGridColumn TItem="cDataStage" Property="NumeroFactura" Title="Factura" Width="20%">
+                                    </RadzenDataGridColumn>
+                   @*                 <RadzenDataGridColumn TItem="cDataStage" Property="Estatus" Title="Estatus" Width="20%">
+                                    </RadzenDataGridColumn>*@
+                                </Columns>
+                            </RadzenDataGrid>
+                        </ChildContent>
+                    </RadzenCard>
+                </div>
+                <div class="col-md-6">
+                    <RadzenLabel Text="Se cargo el Archivo correctamente">
+                    </RadzenLabel>
+                    <RadzenCard style="height: 100%">
+                        <ChildContent>
+                            <div class="row">
+                                <div class="col-md-12">
+                                       @*<button @onclick="@(()=>modal.Show<Correo2>())" class="btn btn-primary">View</button>   *@
+                                    <RadzenTemplateForm Data="@detalle" TItem="Pedimento">                                     
+                                    <ChildContent>
+                                    <div style="margin-bottom: 1rem" class="row">
+                                        <div class="col-md-3">
+                                            <RadzenLabel Component="TotalDocumentos" style="width: 100%" Text="Total de Documentos">
+                                            </RadzenLabel>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <RadzenTextBox style="width: 100%" Disabled="true" Name="TotalDoc" @bind-Value="@(detalle.TotalDocumentos)">
+                                            </RadzenTextBox>
+                                          
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem" class="row">
+                                        <div class="col-md-3">
+                                            <RadzenLabel Component="Incidencias" style="width: 100%" Text="Registros con Errores">
+                                            </RadzenLabel>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <RadzenTextBox Disabled="true" style="margin-bottom: 2px; margin-top: 2px" Name="Textbox0" @bind-Value="@(detalle.Incidencias)">
+                                            </RadzenTextBox>
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 1rem" class="row">
+                                        <div class="col-md-3">
+                                            <RadzenLabel Component="Periodo" style="width: 100%" Text="Periodo a Cargar">
+                                            </RadzenLabel>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <RadzenTextBox Disabled="true" style="width: 100%"  Name="DetallePeriodo" @bind-Value="@(detalle.Periodo)">
+                                            </RadzenTextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12" style="text-align: right">
+                                            <RadzenButton ButtonStyle="ButtonStyle.Primary"  Click="@Guardar"
+                                            Disabled=@deshabilitado Icon="save" Style="width: 100px;margin-bottom: 10px" Text="Grabar">
+                                            </RadzenButton>
+                                        </div>
+                                    </div>
+                                    <RadzenProgressBar style="margin-bottom: 10px; margin-top: 10px" Visible="@(progress>0)" Value=@progress>
+                                    </RadzenProgressBar>
+                                    </ChildContent>
+                                    </RadzenTemplateForm>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 align-items-center d-flex">
+                                    <RadzenLabel style="margin-bottom: 5px; margin-left: 5px; margin-top: 5px" Text="Detalle Error en Registros:">
+                                    </RadzenLabel>
+                                    <RadzenTextArea  @bind-Value="@(detalle.Errores)" Disabled="true" style="height: 130px; margin-left: 10px; width: 100%" Name="Textarea0">
+                                    </RadzenTextArea>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </RadzenCard>
+                </div>
+            </div>
+        </ChildContent>
+    </RadzenContent>
+}
+@if (!_identity.IsAuthenticated)
+       { 
+            <p>Usuario Verificado: @_identity.IsAuthenticated</p>
+            <p>Usuario: @(_identity.Name ?? "")</p>
+            <p>Email: @(_identity.Email ?? "correo no disponible")</p>
+            <h2>"El usuario no es esta Autorizado para esta pantalla"</h2>
+       }
+
+
+@code{
+
+    int IdUsuario;  
+    public bool checkBoxValue;
+    public bool deshabilitado = true;
+    int progress = 0;
+
+    private IEnumerable<cDataStage> pedimento;
+    private Pedimento detalle;
+    private string Archivo = String.Empty;
+    private int IdNegocio = 0;
+    private string Periodo = String.Empty;
+    private string user = String.Empty;
+    private string email = String.Empty;
+    private int totalDocs = 0;
+    private int ok = 1;
+    protected override async Task OnInitializedAsync()
+    {
+        DataAccess da = new DataAccess();
+
+        IdUsuario = _identity.IdUsuario;
+
+        if (da.cons_DetallePedimento(IdUsuario,out detalle, out String msgError))
+        {
+            Archivo = detalle.Archivo;// detalle = lista;
+            IdNegocio = detalle.IdNegocio;
+            Periodo = detalle.Periodo;
+            totalDocs = Convert.ToInt32(detalle.TotalDocumentos);
+            user = detalle.NombreUsuario;
+            email = detalle.Correo;
+        }
+
+        if (da.cons_Pedimento(IdUsuario, 0, out List<cDataStage> lista, out msgError))
+        {
+            pedimento = lista;
+
+            if (lista.Count > 0)
+                deshabilitado = false;
+        }
+    }
+
+
+
+    public async void cons_Pedimento()
+    {
+        DataAccess da = new DataAccess();
+
+        if (checkBoxValue)
+        {           
+            if (da.cons_Pedimento(IdUsuario, 1 , out List<cDataStage> lista, out String msgError))
+            {
+                pedimento = lista;
+            }
+        }
+        else
+           if (da.cons_Pedimento(IdUsuario, 0 , out List<cDataStage> lista,out String msgError))
+        {
+            pedimento = lista;
+        }
+
+    }
+
+    public async Task Guardar()
+    {
+        DataAccess da = new DataAccess();
+
+        deshabilitado = true;
+        //try
+        //{
+        progress = 1;
+        StateHasChanged();
+        da.GeneraPeriodos(_identity.IdUsuario, out String msgError);
+        progress = 33;
+        StateHasChanged();
+        da.GeneraPeriodoNegocio(_identity.IdUsuario, out msgError);
+        progress = 66;
+        StateHasChanged();
+        da.GeneraIncidencias(_identity.IdUsuario, out msgError);
+        progress = 99;
+        StateHasChanged();
+        //}
+        //catch(Exception ex)
+        //{
+
+        //}
+        //     OnInitializedAsync();
+        await DialogService.OpenAsync<Correo2>($"Notificación de envío archivo",
+             new Dictionary<string, object>() { 
+                {"Clave", "ABIERTO" },
+                {"Periodo", Periodo },
+                {"Archivo",Archivo},
+                {"DocsTotales",totalDocs},
+                {"NomUsuario",user},
+                {"Mail",email},
+                {"IdNegocio",IdNegocio},{"ok",ok}},
+             new DialogOptions() { ShowClose=false,Width = "700px", Height = "350px", Resizable = false, Draggable = false });
+
+        progress = 100;
+        detalle = new Pedimento();  
+        pedimento = new List<cDataStage>(); 
+
+
+
+    }
+
+
+}

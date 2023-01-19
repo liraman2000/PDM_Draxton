@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-ComercioExteriorBlazor-FAC73196-981C-4B9A-9DB6-B6776213AFF5</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Upload\**" />
+    <Compile Remove="wwwroot\Upload\**" />
+    <Content Remove="Upload\**" />
+    <Content Remove="wwwroot\Upload\**" />
+    <EmbeddedResource Remove="Upload\**" />
+    <EmbeddedResource Remove="wwwroot\Upload\**" />
+    <None Remove="Upload\**" />
+    <None Remove="wwwroot\Upload\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\_DataAccess.cs" />
+    <Compile Remove="Pages\DashBoard_bkp.razor.cs" />
+    <Compile Remove="Pages\DashBoard_bkp.razor.designer.cs" />
+    <Compile Remove="Pages\Pedimentos_bkp.razor.cs" />
+    <Compile Remove="Pages\Pedimentos_bkp.razor.designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\DashBoard_bkp.razor" />
+    <Content Remove="Pages\Pedimentos_bkp.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="Blazored.Modal" Version="7.1.0" />
+    
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.7" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.7" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.16.0" />
+    <PackageReference Include="Radzen.Blazor" Version="4.2.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dll_Gis">
+      <HintPath>dlls\dll_Gis.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="utilidades\img\" />
+  </ItemGroup>
+
+</Project>

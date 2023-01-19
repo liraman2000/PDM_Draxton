@@ -1,0 +1,482 @@
+﻿@page "/dash-board"
+@layout MainLayout
+@inherits ComercioExteriorBlazor.Pages.DashBoardComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using Blazor.Models.Sample
+@inject Microsoft.Extensions.Localization.IStringLocalizer<DashBoard> L
+
+<PageTitle>DashBoard</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div  class="row">
+      <div class="justify-content-end d-flex col-md-12" style="display: flex">
+        <RadzenLabel style="margin-bottom: 5px; margin-left: 10px; margin-right: 10px; margin-top: 5px" Text="Estatus">
+        </RadzenLabel>
+        <RadzenDropDown Placeholder="TODOS" style="height: 31px" Name="Dropdown0" TValue="dynamic">
+        </RadzenDropDown>
+        <RadzenLabel style="margin-bottom: 5px; margin-left: 10px; margin-right: 10px; margin-top: 5px" Text="Negocio:">
+        </RadzenLabel>
+        <RadzenDropDown Placeholder="TODOS" style="height: 31px" Name="Dropdown1" TValue="dynamic">
+        </RadzenDropDown>
+        <RadzenLabel style="margin-bottom: 5px; margin-left: 10px; margin-right: 10px; margin-top: 5px" Text="Año:">
+        </RadzenLabel>
+        <RadzenDropDown Placeholder="2022" style="height: 31px" Name="Dropdown5" TValue="dynamic">
+        </RadzenDropDown>
+      </div>
+    </div>
+    <RadzenTabs style="height: 728px">
+      <Tabs>
+        <RadzenTabsItem Icon="view_module" Selected="false">
+          <ChildContent>
+            <RadzenPanel style="width: 100%">
+              <ChildContent>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #f10d0d; display: inline-block; height: 305.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="CINSA">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Agosto 2022" Name="Textbox6">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="180" Name="Textbox7">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias ">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="25" Name="Textbox8">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="5" Name="Textbox21">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="En revisión por Comercio Exterior" Name="Textbox0">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox1">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #279239; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #ff4173; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #279239; display: inline-block; height: 302.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="CINSA">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Septiembre 2022" Name="Textbox41">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="270" Name="Textbox42">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="0" Name="Textbox43">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="0" Name="Textbox22">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="Período Cerrado" Name="Estatus">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox45">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #88989b; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #88989b; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #f10d0d; display: inline-block; height: 297.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="CINSA">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Octubre 2022" Name="Textbox36">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="180" Name="Textbox37">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="25" Name="Textbox38">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="11" Name="Textbox23">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="Rechazado por Comercio Exterior" Name="Textbox39">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox40">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #279239; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #ff4173; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #f10d0d; display: inline-block; height: 298.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="Draxton">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Agosto 2022" Name="Textbox31">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="180" Name="Textbox32">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="10" Name="Textbox33">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="3" Name="Textbox24">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="Período Cerrado con Incidencias" Name="Textbox34">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox35">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #279239; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #ff4173; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #f10d0d; display: inline-block; height: 295.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="Draxton">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Septiembre 2022" Name="Textbox20">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="180" Name="Textbox27">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="25" Name="Textbox28">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox Placeholder="5" style="height: 24px; width: 165.40000915527344px" Value="25" Name="Textbox25">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="En revisión por Comercio Exterior" Name="Textbox29">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox30">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #279239; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #ff4173; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #f10d0d; display: inline-block; height: 294.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="Draxton">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Octubre 2022" Name="Textbox15">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="180" Name="Textbox16">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="8" Name="Textbox17">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="2" Name="Textbox26">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="En revisión por Negocio" Name="Textbox18">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox19">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #279239; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #ff4173; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #f10d0d; display: inline-block; height: 297.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="VITROMEX">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Agosto 2022" Name="Textbox10">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="180" Name="Textbox11">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="25" Name="Textbox12">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="25" Name="Textbox44">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="En revisión por Comercio Exterior" Name="Textbox13">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox14">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #279239; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #ff4173; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #279239; display: inline-block; height: 298.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="VITROMEX">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Septiembre 2022" Name="Textbox2">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="260" Name="Textbox3">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="5" Name="Textbox4">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="0" Name="Textbox51">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="Periodo Cerrado " Name="Textbox5">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox9">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #88989b; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #88989b; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+                <RadzenFieldset AllowCollapse="true" Icon="folder" style="border: 2px solid #f10d0d; display: inline-block; height: 300.0500183105469px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px; margin-top: 05px; width: 341px" Text="Vitromex">
+                  <ChildContent>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; margin-top: 05px; vertical-align: middle; width: 130.27500915527344px" Text="Período:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 26px; width: 166.40000915527344px" Value="Octubre 2022" Name="Textbox46">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 36px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 130.5500030517578px" Text="Documentos Totales:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 27px; width: 167.40000915527344px" Value="180" Name="Textbox47">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="25" Name="Textbox48">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="margin-left: 5px; margin-right: 10px; width: 131.5999984741211px" Text="Incidencias Activas:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; width: 165.40000915527344px" Value="15" Name="Textbox52">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenTextBox style="font-weight: bold; height: 24px; text-align: center; width: 313.3999938964844px" Value="En revisión por Negocio" Name="Textbox49">
+                      </RadzenTextBox>
+                    </div>
+                    <div style="height: 33px" class="row">
+                      <RadzenLabel style="width: 71.4375px" Text="Enviado:">
+                      </RadzenLabel>
+                      <RadzenTextBox style="height: 24px; text-align: left; width: 239.40000915527344px" Value="23/10/2022" Name="Textbox50">
+                      </RadzenTextBox>
+                    </div>
+                    <div class="row justify-content-center" style="height: 47px">
+                      <RadzenButton Icon="search" style="height: 30; margin-left: 10px; margin-right: 10px; margin-top: 0px" Text="Consultar">
+                      </RadzenButton>
+                      <RadzenButton Icon="done" style="background-color: #279239; height: 30; margin-left: 10px; margin-right: 05px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                      <RadzenButton Icon="clear" style="background-color: #ff4173; height: 30; margin-left: 05px; margin-right: 10px; margin-top: 0px; width: 42.63750076293945px">
+                      </RadzenButton>
+                    </div>
+                  </ChildContent>
+                </RadzenFieldset>
+              </ChildContent>
+            </RadzenPanel>
+          </ChildContent>
+        </RadzenTabsItem>
+        <RadzenTabsItem Icon="view_headline" Selected="false">
+          <ChildContent>
+            <RadzenPanel style="height: 529px">
+              <ChildContent>
+                <RadzenDataGrid @ref="datagrid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Count="@getOrderDetailsCount" Data="@getOrderDetailsResult" TItem="Blazor.Models.Sample.OrderDetail" PageSize="10" style="height: 528.6000061035156px" LoadData="@Datagrid0LoadData">
+                  <Columns>
+                    <RadzenDataGridColumn TItem="Blazor.Models.Sample.OrderDetail" Title="Negocio" Width="15%">
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Blazor.Models.Sample.OrderDetail" Title="Fecha Envío" Width="15%">
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Blazor.Models.Sample.OrderDetail" Title="Período" Width="10%">
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Blazor.Models.Sample.OrderDetail" Title="Documentos Totales" Width="10%">
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Blazor.Models.Sample.OrderDetail" Title="Incidencias" Width="10%">
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Blazor.Models.Sample.OrderDetail" MinWidth="25%" Title="Estatus">
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Blazor.Models.Sample.OrderDetail" Title="Opciones" Width="15%">
+                    </RadzenDataGridColumn>
+                  </Columns>
+                </RadzenDataGrid>
+              </ChildContent>
+            </RadzenPanel>
+          </ChildContent>
+        </RadzenTabsItem>
+      </Tabs>
+    </RadzenTabs>
+  </ChildContent>
+</RadzenContent>

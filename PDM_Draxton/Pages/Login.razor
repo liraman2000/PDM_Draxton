@@ -1,0 +1,135 @@
+﻿@page "/"
+@page "/login"
+@layout LoginLayout
+@inherits PDM_Draxton.Pages.loginComponent
+
+@using PDM_Draxton.Services
+@inject IdentityInformation _identity;
+
+@using Radzen
+@using Radzen.Blazor
+@using PDM_Draxton.Models
+@using Microsoft.AspNetCore.Authorization
+@using Data
+@using dll_Gis
+
+<PageTitle>Login</PageTitle>
+<RadzenContent Container="main">
+    <ChildContent>
+        <RadzenHeading Size="H1" Text="Acceso">
+        </RadzenHeading>
+        <div class="row">
+            <div class="col-md-12">
+                <RadzenTemplateForm Data="@login" Method="post">
+                    <ChildContent>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel style="color:red ;margin-bottom: fpx; margin-top: 10px" Text='*' Visible=@usr>
+                                </RadzenLabel>
+                                <RadzenLabel style="width=100%;text-align= right" Text="Usuario:">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox style="margin-bottom: 2px; margin-top: 2px;width: 100%" @bind-Value=usuario Name="TxtUser">
+                                </RadzenTextBox>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem" class="row">
+                            <div class="col-md-3">
+                                <RadzenLabel style="color:red ;margin-bottom: fpx; margin-top: 10px"
+                                             Text='*' Visible=@pwd>
+                                </RadzenLabel>
+                                <RadzenLabel style="width=100%; text-align:right" Text="Clave:">
+                                </RadzenLabel>
+                            </div>
+                            <div class="col-md-9">
+                                <RadzenTextBox style="width: 100%" type="password" @bind-Value=password Name="TxtPwd">
+                                </RadzenTextBox>
+                            </div>
+                        </div>
+                        <div>
+                            <RadzenLabel style="color:red ;margin-bottom: fpx; margin-left: 5px; margin-right: 5px; margin-top: 10px"
+                                         @bind-Text=msgError>
+                            </RadzenLabel>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:right">
+                                <RadzenButton ButtonStyle="ButtonStyle.Primary" Click="@login"
+                                              Style="width: 100px;margin-bottom: 10px" Text="Inicio">
+                                </RadzenButton>
+                            </div>
+                        </div>
+                    </ChildContent>
+                </RadzenTemplateForm>
+            </div>
+        </div>
+    </ChildContent>
+</RadzenContent>
+
+@code{
+    private string usuario = String.Empty;
+    private string password = String.Empty;
+    bool usr = false;
+    bool pwd = false;
+    string msgError = String.Empty;
+    Funciones fn = new Funciones();
+    Usuario? user;
+
+    public void login()
+    {
+        usr = false;
+        pwd = false;
+
+        msgError = "";
+        DataAccess da = new DataAccess();
+        bool log = false;
+
+        if (usuario == "" || password == "")
+        {
+            if (usuario == "")
+                usr = true;
+            else
+                usr = false;
+
+            if (password == "")
+                pwd = true;
+            else
+                pwd = false;
+
+            msgError = "*   Capture los campos requeridos.";
+            return;
+        }
+
+        try
+        {
+            if (da.cons_UsuarioAcceso(usuario, out user, out msgError))
+            {
+                if (user is not null)
+                    if (fn.fs_LogIn(usuario, password, out msgError))
+                    {
+                        _identity.IsAuthenticated = true;
+                        _identity.IdUsuario = user.Id;
+                        _identity.Name = user.Nombre;
+                        _identity.Email = user.Correo;
+                        _identity.Rol = user.Rol;
+
+                        log = true;
+                    }
+                    else
+                        _identity.IsAuthenticated = false;
+            }
+            else
+                msgError = "No tiene permisos para ingresar al sistema.";
+        }
+        catch (Exception ex)
+        {
+            msgError = "No se puede acceder a la Base de datos.";
+        }
+        finally
+        {
+           if(log)
+            UriHelper.NavigateTo("NavMenu");
+        }
+    }
+
+}

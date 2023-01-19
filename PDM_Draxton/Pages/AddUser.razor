@@ -1,0 +1,117 @@
+﻿@page "/add-user"
+@layout MainLayout
+@inherits PDM_Draxton.Pages.AddUserComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using PDM_Draxton.Services
+@using PDM_Draxton.Data
+@using PDM_Draxton.Models
+@using System.Text.RegularExpressions
+
+@inject IdentityInformation _identity;
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<AddUser> L
+<PageTitle>Agrega Usuario</PageTitle>
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@usuario" Visible="@(usuario != null)" TItem="PDM_Draxton.Models.Usuario" Submit="@Form0Submit">
+          <ChildContent>
+              <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Perfil" Component="Rol" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+  @*              <RadzenTextBox style="width: 100%" @bind-Value="@(usuario.Negocio)" Name="Negocio">
+                </RadzenTextBox>*@
+               <RadzenDropDown Data="@IRol"  AllowClear="true" AllowFiltering="true" style="height: 31px" TextProperty="Descripcion" 
+               ValueProperty="Id" Name="Rol" TValue="int" @bind-Value=IdRol Change=@(perfil)  Placeholder="Seleccione...">
+                </RadzenDropDown>
+@*                <RadzenRequiredValidator Component="Rol" Text="Rol es requerido" style="position: absolute">
+                </RadzenRequiredValidator>*@
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Nombre Usuario" Component="Nombre" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength=50 style="width: 100%" @bind-Value="@(usuario.Nombre)" Name="UserName">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Correo" Component="Correo" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength=50 style="width: 100%" @bind-Value="@(usuario.Correo)" Name="Negocio">
+                </RadzenTextBox>
+@*                <RadzenRequiredValidator Component="Correo" Text="Correo es requerido" style="position: absolute">
+                </RadzenRequiredValidator>*@
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Text="Negocio" Component="Negocio" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+  @*              <RadzenTextBox style="width: 100%" @bind-Value="@(usuario.Negocio)" Name="Negocio">
+                </RadzenTextBox>*@
+               <RadzenDropDown Data="@INegocio"  @ref="component"  Disabled=@deshabilita AllowClear="true" AllowFiltering="true" style="height: 31px" 
+               TextProperty="Descripcion" ValueProperty="Id" Name="Negocio" TValue="string" @bind-Value=IdNegocio Change=@(negocio) Placeholder="Seleccione...">
+                </RadzenDropDown>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Grabar" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+  </RadzenContent>
+
+@code{
+
+    string IdNegocio = "0";
+    int IdRol;
+
+    List<RadzenDropDown<string>> components = new List<RadzenDropDown<string>>();
+    RadzenDropDown<string> component { set => components.Add(value); }
+
+    bool deshabilita = true;
+
+    public async void negocio()
+    {
+        usuario.IdNegocio = Convert.ToInt32(IdNegocio);
+    }
+
+    public async void perfil()
+    {
+        if (IdRol == 2)
+            deshabilita = false;
+        else
+        {            
+            deshabilita = true;
+
+        }
+
+        usuario.IdRol = IdRol;
+     //   usuario.IdUsuario = _identity.IdUsuario;
+    }
+}

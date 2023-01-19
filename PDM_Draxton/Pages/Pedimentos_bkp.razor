@@ -1,0 +1,153 @@
+﻿@page "/pedimentos"
+@layout MainLayout
+@inherits ComercioExteriorBlazor.Pages.PedimentosComponent
+
+@using ComercioExteriorBlazor.Data
+@using ComercioExteriorBlazor.Models
+@using Radzen
+@using Radzen.Blazor
+
+@using ComercioExteriorBlazor.Services
+@inject IdentityInformation _identity;
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Pedimentos> L
+
+<PageTitle>Pedimentos</PageTitle>
+
+@if (_identity.IsAuthenticated)
+{
+    var identity = _identity.IdNegocio;
+
+    <RadzenContent Container="main">
+        <ChildContent>
+            <RadzenHeading Size="H1" Text="Pedimentos">
+            </RadzenHeading>
+            <div style="height: 100%" class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 justify-content-end d-flex">
+                            <RadzenLabel style="margin-bottom: 05px; margin-left: 05px; margin-right: 05px; margin-top: 05px" Text="Mostrar solo errores">
+                            </RadzenLabel>
+
+                        </div>
+                    </div>
+                    <RadzenCard style="height: 100%">
+                        <ChildContent>
+                            <RadzenDataGrid AllowPaging="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+                            PageSize="10" AllowSorting="true" ColumnWidth="150px" Data="@pedimentos" FilterMode="Radzen.FilterMode.Advanced" TItem="Pedimento"
+                            RowSelect="@Grid0RowSelect">
+                                <Columns>
+            @*                        <RadzenDataGridColumn TItem="Pedimento" Property="id" Title="Pedimento" Visible="false" Width="20#">
+                                    </RadzenDataGridColumn>
+                                    <RadzenDataGridColumn TItem="Pedimento" Property="NumPedimento" Title="Pedimento">
+                                    </RadzenDataGridColumn>
+                                    <RadzenDataGridColumn TItem="Pedimento" Property="FechaFacturacion" Title="Emisor" Width="40%">
+                                    </RadzenDataGridColumn>
+                                    <RadzenDataGridColumn TItem="Pedimento" Property="NumPedimento" Title="Tipo Incidencia" Width="20%">
+                                    </RadzenDataGridColumn>*@
+                                </Columns>
+                            </RadzenDataGrid>
+                        </ChildContent>
+                    </RadzenCard>
+                </div>
+                <div class="col-md-6">
+                    <RadzenLabel Text="Se cargo el Archivo correctamente">
+                    </RadzenLabel>
+                    <RadzenCard style="height: 100%">
+                        <ChildContent>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <RadzenTemplateForm Data="@pedimento" TItem="ComercioExteriorBlazor.Models.Pedimento" Visible="@(pedimento != null)" Submit="@Form0Submit">
+                                        <ChildContent>
+                                            <div style="margin-bottom: 1rem" class="row">
+                                                <div class="col-md-3">
+                                                    <RadzenLabel Component="ProductName" style="width: 100%" Text="Total de Documentos">
+                                                    </RadzenLabel>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <RadzenTextBox style="width: 100%" Name="ProductName">
+                                                    </RadzenTextBox>
+                                                     @*    <RadzenTextBox style="width: 100%" @bind-Value="@(pedimento.NumeroFactura)" Name="ProductName">
+                                                    </RadzenTextBox>*@
+                                                </div>
+                                            </div>
+                                            <div style="margin-bottom: 1rem" class="row">
+                                                <div class="col-md-3">
+                                                    <RadzenLabel Component="ProductPrice" style="width: 100%" Text="Registros con Errores">
+                                                    </RadzenLabel>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <RadzenTextBox style="margin-bottom: 2px; margin-top: 2px" Name="Textbox0">
+                                                    </RadzenTextBox>
+                                                </div>
+                                            </div>
+                                            <div style="margin-bottom: 1rem" class="row">
+                                                <div class="col-md-3">
+                                                    <RadzenLabel Component="ProductPicture" style="width: 100%" Text="Periodo a Cargar">
+                                                    </RadzenLabel>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <RadzenTextBox style="width: 100%"  Name="Pedimento">
+                                                    </RadzenTextBox>
+                                              @*         <RadzenTextBox style="width: 100%" @bind-Value="@(pedimento.NumPedimento.ToString())" Name="Pedimento">
+                                                    </RadzenTextBox>*@
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12" style="text-align: right">
+                                                    <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" style="width: 100px" Text="Grabar">
+                                                    </RadzenButton>
+                                                </div>
+                                            </div>
+                                            <RadzenProgressBar style="margin-bottom: 10px; margin-top: 10px" Value="70">
+                                            </RadzenProgressBar>
+                                        </ChildContent>
+                                    </RadzenTemplateForm>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 align-items-center d-flex">
+                                    <RadzenLabel style="margin-bottom: 5px; margin-left: 5px; margin-top: 5px" Text="Detalle Error en Registros:">
+                                    </RadzenLabel>
+                                    <RadzenTextArea Placeholder="- Se Encontraron 2 registros con campos nulos
+                - Se encontraron 3 registros con datos incompatibles en el campo
+                - Se encontraron 4 registros repetidos 
+                - El resto de los registro Total de Documentos se insertara correctamente" style="height: 130px; margin-left: 10px; width: 100%" Name="Textarea0">
+                                    </RadzenTextArea>
+                                </div>
+                            </div>
+                        </ChildContent>
+                    </RadzenCard>
+                </div>
+            </div>
+        </ChildContent>
+    </RadzenContent>
+}
+@if (!_identity.IsAuthenticated)
+       { 
+            <p>Usuario Verificado: @_identity.IsAuthenticated</p>
+            <p>Usuario: @(_identity.Name ?? "")</p>
+            <p>Email: @(_identity.Email ?? "correo no disponible")</p>
+            <h2>"El usuario no es esta Autorizado para esta pantalla"</h2>
+       }
+
+
+@code{
+
+    private IEnumerable<Pedimento> pedimentos;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        DataAccess da = new DataAccess();
+
+
+        if (da.cons_Pedimento(out List<Pedimento> lista, out String msgError))
+        {
+            pedimentos = lista;
+        }
+
+    }
+
+}

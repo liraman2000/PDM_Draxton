@@ -1,0 +1,64 @@
+﻿@*<div class="top-row ps-3 navbar navbar-dark">*@
+    <div class="container-fluid">
+        <div class="row">
+              <img src='https://www.gis.com.mx/wp-content/themes/GIS/images/gislogo1.png' size="100px"/>                     
+        <h1><a class="navbar-brand" href="">Comercio Exterior</a></h1>
+
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>   </div>  
+@*</div>*@
+@*<RadzenHeader>
+      <ChildContent>
+        <div class="row justify-content-start align-items-center">
+          <div class="col-6 d-flex align-items-center">
+            <RadzenSidebarToggle Click="@SidebarToggle0Click">
+            </RadzenSidebarToggle>
+            <RadzenLabel Text="Blazor">
+            </RadzenLabel>
+          </div>
+          <div class="col-6 text-right">
+          </div>
+        </div>
+      </ChildContent>
+ </RadzenHeader>*@
+
+@*<AuthorizeView>
+    <Authorized>*@
+
+@using PDM_Draxton.Services
+@inject IdentityInformation _identity;
+@*
+@if (_identity.IsAuthenticated)
+{*@
+
+    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+        <nav class="flex-column">
+                   <div class="nav-item px-3">
+                <NavLink class="nav-link" href="login">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Login
+                </NavLink>
+            </div>
+          
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="usuarios">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> Usuarios
+                    </NavLink>
+                </div>
+            
+        </nav>
+    </div>
+@*}*@
+
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
