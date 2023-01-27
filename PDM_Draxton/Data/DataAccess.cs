@@ -62,9 +62,15 @@ namespace PDM_Draxton.Data
                     for (int r = 0; r < dt.Rows.Count; r++)
                     {
                         user.Id = Convert.ToInt32(dt.Rows[r]["Id"]);
-                        user.Nombre = dt.Rows[r]["Nombre"].ToString(); user.Correo = dt.Rows[r]["Correo"].ToString();
-                        user.UserName = dt.Rows[r]["UserName"].ToString(); user.IdNegocio = Convert.ToInt32(dt.Rows[r]["IdNegocio"]);
-                        user.Negocio = dt.Rows[r]["Negocio"].ToString(); user.IdRol = Convert.ToInt32(dt.Rows[r]["IdRol"]);
+                        user.Nombre = dt.Rows[r]["Nombre"].ToString(); 
+                        user.Correo = dt.Rows[r]["Correo"].ToString();
+                        user.UserName = dt.Rows[r]["UserName"].ToString(); 
+                        user.OrgId = Convert.ToInt32(dt.Rows[r]["OrgId"]);
+                        user.Nomina = Convert.ToInt32(dt.Rows[r]["Nomina"]);
+                        user.Planta = dt.Rows[r]["Planta"].ToString();
+                        user.Departamento = dt.Rows[r]["Departamento"].ToString();
+                        user.Puesto = dt.Rows[r]["Puesto"].ToString();
+                        user.IdRol = Convert.ToInt32(dt.Rows[r]["IdRol"]);
                         user.Rol = dt.Rows[r]["Rol"].ToString();
                     }
                     if (dt.Rows.Count > 0)
@@ -100,9 +106,15 @@ namespace PDM_Draxton.Data
                     {
                         Usuario user = new Usuario();
                         user.Id = Convert.ToInt32(dt.Rows[r]["Id"]);
-                        user.Nombre = dt.Rows[r]["Nombre"].ToString(); user.Correo = dt.Rows[r]["Correo"].ToString();
-                        user.UserName = dt.Rows[r]["UserName"].ToString(); user.IdNegocio = Convert.ToInt32(dt.Rows[r]["IdNegocio"]);
-                        user.Negocio = dt.Rows[r]["Negocio"].ToString(); user.IdRol = Convert.ToInt32(dt.Rows[r]["IdRol"]);
+                        user.Nombre = dt.Rows[r]["Nombre"].ToString();
+                        user.Correo = dt.Rows[r]["Correo"].ToString();
+                        user.UserName = dt.Rows[r]["UserName"].ToString();
+                        user.OrgId = Convert.ToInt32(dt.Rows[r]["OrgId"]);
+                        user.Nomina = Convert.ToInt32(dt.Rows[r]["Nomina"]);
+                        user.Planta = dt.Rows[r]["Plantta"].ToString();
+                        user.Departamento = dt.Rows[r]["Departamento"].ToString();
+                        user.Puesto = dt.Rows[r]["Puesto"].ToString();
+                        user.IdRol = Convert.ToInt32(dt.Rows[r]["IdRol"]);
                         user.Rol = dt.Rows[r]["Rol"].ToString();
 
                         lista.Add(user);
@@ -138,9 +150,15 @@ namespace PDM_Draxton.Data
                     for (int r = 0; r < dt.Rows.Count; r++)
                     {
                         user.Id = Convert.ToInt32(dt.Rows[r]["Id"]);
-                        user.Nombre = dt.Rows[r]["Nombre"].ToString(); user.Correo = dt.Rows[r]["Correo"].ToString();
-                        user.UserName = dt.Rows[r]["UserName"].ToString(); user.IdNegocio = Convert.ToInt32(dt.Rows[r]["IdNegocio"]);
-                        user.Negocio = dt.Rows[r]["Negocio"].ToString(); user.IdRol = Convert.ToInt32(dt.Rows[r]["IdRol"]);
+                        user.Nombre = dt.Rows[r]["Nombre"].ToString();
+                        user.Correo = dt.Rows[r]["Correo"].ToString();
+                        user.UserName = dt.Rows[r]["UserName"].ToString();
+                        user.OrgId = Convert.ToInt32(dt.Rows[r]["OrgId"]);
+                        user.Nomina = Convert.ToInt32(dt.Rows[r]["Nomina"]);
+                        user.Planta = dt.Rows[r]["Plantta"].ToString();
+                        user.Departamento = dt.Rows[r]["Departamento"].ToString();
+                        user.Puesto = dt.Rows[r]["Puesto"].ToString();
+                        user.IdRol = Convert.ToInt32(dt.Rows[r]["IdRol"]);
                         user.Rol = dt.Rows[r]["Rol"].ToString();
                     }
                     if (dt.Rows.Count > 0)
@@ -190,7 +208,7 @@ namespace PDM_Draxton.Data
             i++;
             @params[i] = new SqlParameter("@IdRol", user.IdRol);
             i++;
-            @params[i] = new SqlParameter("@IdNegocio", user.IdNegocio);
+            @params[i] = new SqlParameter("@OrgId", user.OrgId);
 
             try
             {

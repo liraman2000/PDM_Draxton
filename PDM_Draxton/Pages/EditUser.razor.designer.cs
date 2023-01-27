@@ -113,7 +113,7 @@ namespace PDM_Draxton.Pages
             if (da.cons_Usuario(Id,out Usuario user, out String msgError))
             {
                 usuario = user;
-                IdNegocio = user.IdNegocio.ToString();
+                IdNegocio = user.OrgId.ToString();
                 IdRol = user.IdRol;
              //   usuario.IdUsuario = _identity.IdUsuario;
 
@@ -138,7 +138,7 @@ namespace PDM_Draxton.Pages
             {
                 IdNegocio = "0";
                 deshabilita = true;
-                usuario.IdNegocio = Convert.ToInt32(IdNegocio);
+                usuario.OrgId = Convert.ToInt32(IdNegocio);
             }
 
             usuario.IdRol = IdRol;            
@@ -147,7 +147,7 @@ namespace PDM_Draxton.Pages
 
         protected void negocio()
         {
-          usuario.IdNegocio = Convert.ToInt32(IdNegocio);
+          usuario.OrgId = Convert.ToInt32(IdNegocio);
         }
     protected async System.Threading.Tasks.Task Form0Submit(PDM_Draxton.Models.Usuario args)
         {
@@ -186,11 +186,11 @@ namespace PDM_Draxton.Pages
                     NotificationService.Notify(new NotificationMessage() { Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Seleccione un Perfil" });
                     return;
                 }
-                if ((args.IdNegocio == da.cons_NegocioTodos() || args.IdNegocio == 0) && args.IdRol == 2)
-                {
-                    NotificationService.Notify(new NotificationMessage() { Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Seleccione un Negocio" });
-                    return;
-                }
+                //if ((args.IdNegocio == da.cons_NegocioTodos() || args.IdNegocio == 0) && args.IdRol == 2)
+                //{
+                //    NotificationService.Notify(new NotificationMessage() { Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Seleccione un Negocio" });
+                //    return;
+                //}
               
 
                 if (da.ins_Usuario(usuario, out String msgErrorNeg))

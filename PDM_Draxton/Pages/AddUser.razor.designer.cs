@@ -130,11 +130,11 @@ namespace PDM_Draxton.Pages
                 NotificationService.Notify(new NotificationMessage() { Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Seleccione un Perfil" });
                 return;
             }
-            if (args.IdNegocio == 0 && args.IdRol == 2)
-            {
-                NotificationService.Notify(new NotificationMessage() { Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Seleccione un Negocio" });
-                return;
-            }
+            //if (args.IdNegocio == 0 && args.IdRol == 2)
+            //{
+            //    NotificationService.Notify(new NotificationMessage() { Severity = NotificationSeverity.Error, Summary = $"Error", Detail = $"Seleccione un Negocio" });
+            //    return;
+            //}
                     
                 DataAccess da = new DataAccess();
 
